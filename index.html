@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rick and Morty</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+          rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+          crossorigin="anonymous">
+    <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.css'
+        integrity='sha512-KOWhIs2d8WrPgR4lTaFgxI35LLOp5PRki/DxQvb7mlP29YZ5iJ5v8tiLWF7JLk5nDBlgPP1gHzw96cZ77oD7zQ=='
+        crossorigin='anonymous' />
+    <link
+        href="https://fonts.googleapis.com/css?family=Montserrat:100,200,300,regular,500,600,700,800,900,100italic,200italic,300italic,italic,500italic,600italic,700italic,800italic,900italic"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<!--    <div class="popup">-->
+
+<!--    </div>-->
+    <div class="modal fade" id="popup" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" data-bs-theme="dark">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-body" >
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="wrap">
+
+        <header>
+            <div class="nav noto-sans">
+                <ul>
+                    <li><a href="" id="home">Home</a></li>
+                    <li><a href="" id="character">Charecter</a></li>
+                    <li><a href="" id="episode">Episodes</a></li>
+                    <li><a href="" id="location">Locations</a></li>
+                    <li><a href="" id="watchList">WatchList</a></li>
+                </ul>
+            </div>
+        </header>
+
+        <div id="page-home" class="page">
+            <div class="initial-img">
+                <img src="/img/Rick_and_Morty.svg.png" alt="">
+            </div>
+            <div class="intro item tilt-neon">
+                <div class="item-img">
+                    <img class="intro-img" src="img/Rick%20and%20Mirty%20fall.webp" alt="">
+                </div>
+                <div class="item-info">
+                    <h3>Intro</h3>
+                    <p>Welcome to our website dedicated to the "Rick and Morty" universe! Here you will find comprehensive
+                        information about all the characters, exciting locations and a detailed list of episodes. Our
+                        site is designed for fans of the series who want to dive into every detail of this fantastic
+                        world. From the eccentric genius Rick Sanchez to the innocent Morty Smith, from alien planets to
+                        alternate realities, we have collected everything that might interest fans. Welcome to explore,
+                        learn new things and discuss your favourite moments with "Rick and Morty"!
+
+                    </p>
+                </div>
+            </div>
+            <div class="general item row-rewerse tilt-neon">
+                <div class="item-img">
+                    <img src="img/Rick%20and%20Morty%20imdb.jpg" alt="">
+                </div>
+                <div class="item-info">
+                    <h3>General</h3>
+                    <p>"Rick and Morty" is an animated science fiction series created by Justin Roiland and
+                        Dan Harmon. It premiered in 2013 on Adult Swim and has since gone on to win the hearts of
+                        the hearts of millions of viewers around the world.</p>
+                </div>
+            </div>
+            <div class="plot item tilt-neon">
+                <div class="item-img">
+                    <img src="img/Rick%20and%20Mirty%20fall%20green.webp" alt="">
+                </div>
+                <div class="item-info">
+                    <h3>Plot</h3>
+                    <p>The plot revolves around the adventures of Rick Sanchez, a brilliant scientist with
+                        unconventional moral principles, and his insecure grandson Morty Smith. Together, they travel
+                        through space and time, facing various dangers, aliens and other dimensions. Each episode is a
+                        unique blend of sharp humour, science fiction and philosophical reflections.</p>
+                </div>
+            </div>
+            <div class="plot item row-rewerse tilt-neon">
+                <div class="item-img">
+                    <img src="img/Rick%20and%20Morty.jpg" alt="">
+                </div>
+                <div class="item-info">
+                    <h3>Famous for</h3>
+                    <p>The series is known for its complex storylines, clever humour and deep emotional moments. "Rick
+                        and Morty" explores themes that range from the absurd to the serious, offering viewers both
+                        hilarious and touching moments. Thanks to its unique style and unpredictable twists and turns,
+                        "Rick and Morty" has become a cult phenomenon in contemporary popular culture.</p>
+                </div>
+            </div>
+        </div>
+        <button class="filter-open" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasRight"
+                aria-controls="offcanvasRight"></button>
+
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel" data-bs-theme="dark">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Filters</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            </div>
+            <div class="offcanvas-body">
+                <div class="filter filter-character">
+                    <form id="filterFormCharacter">
+                        <div>
+                            <label for="nameCharacter">Name: </label>
+                            <input type="text" id="nameCharacter" name="nameCharacter">
+                        </div>
+
+                        <div data-bs-theme="light">
+                            <label for="status">Status: </label>
+                            <select name="status" id="status">
+                                <option value="">Any</option>
+                                <option value="alive">Alive</option>
+                                <option value="dead">Dead</option>
+                                <option value="unknown">Unknown</option>
+                            </select>
+                        </div>
+
+                        <div>
+                            <label for="species">Species</label>
+                            <input type="text" id="species" name="species">
+                        </div>
+
+                        <div>
+                            <label for="type">Type: </label>
+                            <input type="text" id="type" name="type">
+                        </div>
+
+                        <div>
+                            <label for="gender">Gender: </label>
+                            <select name="gender" id="gender">
+                                <option value="">Any</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                                <option value="genderless">Genderless</option>
+                                <option value="unknown">Unknown</option>
+                            </select>
+                        </div>
+
+
+                        <button class="btn btn-light" type="submit">Filter</button>
+                    </form>
+                </div>
+
+                <div class="filter filter-episode">
+                    <form id="filterFormEpisode">
+                        <div class="">
+                            <label for="episodeName">Name:</label>
+                            <input type="text" id="episodeName" name="episodeName">
+                        </div>
+
+                        <button class="btn btn-light" type="submit">Filter</button>
+                    </form>
+
+                </div>
+                <div class="filter filter-location">
+                    <form id="filterFormLocation">
+                        <div>
+                            <label for="locationName">Name:</label>
+                            <input type="text" id="locationName" name="locationName">
+                        </div>
+
+                        <div>
+                            <label for="typeLocation">Type: </label>
+                            <input type="text" id="typeLocation" name="typeLocation">
+                        </div>
+
+                        <div>
+                            <label for="dimensionLocation">Dimension: </label>
+                            <input type="text" id="dimensionLocation" name="dimensionLocation">
+                        </div>
+
+                        <button class="btn btn-light" type="submit">Filter</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div >
+            <div id="page-character" class="page">
+
+            </div>
+        </div>
+        <div>
+            <div id="page-episode" class="page">
+
+            </div>
+        </div>
+        <div>
+            <div id="page-location" class="page">
+
+            </div>
+        </div>
+        <div>
+            <div id="page-watchList" class="page">
+                <div class="watchlist-menu" data-bs-theme="dark">
+                    <select class="form-select" name="" id="watchlist-episode-select">
+
+                    </select>
+                    <button class="btn btn-light" id="add-episode">Add to watchlist</button>
+                </div>
+                <div class="watchlist-items"></div>
+            </div>
+        </div>
+
+        <!-- <div class="episode">
+            <h4 id="episodeName"></h4>
+            <p id="air_date"></p>
+        </div> -->
+
+        <!-- <div class="location">
+            <h4 id="locationName"></h4>
+            <p id="air_date"></p>
+        </div> -->
+        <!-- <div class="characterContainer">
+            <div class="charecterItem">
+                <img style="height: 264px;" src="photo_5226868993736956619_y.jpg" alt="characterPhoto">
+                <h3>Ivanus Dmytro</h3>
+                <button class="charecterBtn" id="${el.id}">view</button>
+            </div>
+        </div> -->
+
+        <!-- <div class="pagination">
+            <button id="paginationPrev">-</button>
+            <div id="pageNumber"></div>
+            <button id="paginationNext">+</button>
+        </div> -->
+        <ul class="pagination text-light" data-bs-theme="dark">
+            <li class="page-item page-link text-light rounded-start bg-transparent" aria-label="Previous" id="firstPage">
+                <span aria-hidden="true">&laquo;</span>
+            </li>
+            <li class="page-item page-link text-light bg-transparent active" id="previousPage">1</li>
+            <li class="page-item page-link text-light bg-transparent" id="currentPage">2</li>
+            <li class="page-item page-link text-light bg-transparent" id="nextPage">3</li>
+            <li class="page-item page-link text-light rounded-end bg-transparent" aria-label="Next" id="lastPage">
+                <span aria-hidden="true">&raquo;</span>
+            </li>
+        </ul>
+    </div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.js'
+        integrity='sha512-+k1pnlgt4F1H8L7t3z95o3/KO+o78INEcXTbnoJQ/F2VqDVhWoaiVml/OEHv9HsVgxUaVW+IbiZPUJQfF/YxZw=='
+        crossorigin='anonymous'></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+            crossorigin="anonymous"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>
+
+<!-- 
+    Button cancel for filters
+
+ -->
