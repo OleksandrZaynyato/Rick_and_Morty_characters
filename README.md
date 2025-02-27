@@ -33,6 +33,7 @@ Welcome to the Rick and Morty Character Info Site! This is a simple web applicat
     ```
 
 3. Run index.html
+4. Set photo_5226868993736956619_y.jpg as your profile picture
 
 ## 🎯 Usage
 After launching, open in your browser:
